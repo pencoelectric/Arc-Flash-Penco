@@ -14,7 +14,6 @@
   --green-deep: #1B3A2D;
   --green-mid: #2D5E45;
   --gold: #C5A55A;
-  --gold-light: #D4BA7A;
   --gold-dim: rgba(197,165,90,0.15);
   --cream: #F5F3EE;
   --white-smoke: #FAFAF8;
@@ -30,8 +29,8 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
-  color: var(--text-dark);
-  background: var(--cream);
+  color: #1A1A1A;
+  background-color: #F5F3EE;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -41,21 +40,14 @@ body {
 position: fixed;
 inset: 0;
 z-index: 1000;
-background: var(–green-deep);
+background-color: #1B3A2D;
 display: flex;
 align-items: center;
 justify-content: center;
-opacity: 1;
-visibility: visible;
 }
-.gate-overlay.hide {
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
-transition: opacity 0.5s ease, visibility 0.5s ease;
-}
+.gate-overlay.hide { display: none; }
 .gate-card {
-background: #fff;
+background-color: #ffffff;
 border-radius: 12px;
 padding: 44px 38px;
 max-width: 460px;
@@ -68,27 +60,27 @@ content: ‘’;
 position: absolute;
 top: 0; left: 0; right: 0;
 height: 4px;
-background: var(–gold);
+background-color: #C5A55A;
 border-radius: 12px 12px 0 0;
 }
 .gate-badge {
 font-size: 11px;
 font-weight: 600;
 letter-spacing: 1.5px;
-color: var(–gold);
+color: #C5A55A;
 text-transform: uppercase;
 margin-bottom: 12px;
 }
 .gate-title {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: 24px;
-color: var(–green-deep);
+color: #1B3A2D;
 line-height: 1.25;
 margin-bottom: 8px;
 }
 .gate-sub {
 font-size: 14px;
-color: var(–text-light);
+color: #6B6B6B;
 margin-bottom: 24px;
 line-height: 1.5;
 }
@@ -105,101 +97,100 @@ flex-direction: column;
 .form-field label {
 font-size: 12px;
 font-weight: 600;
-color: var(–text-med);
+color: #3A3A3A;
 margin-bottom: 4px;
 }
 .form-field input {
 padding: 11px 13px;
-border: 1.5px solid var(–border);
+border: 1.5px solid #D4D0C8;
 border-radius: 8px;
-font-family: var(–font-body);
+font-family: ‘DM Sans’, sans-serif;
 font-size: 15px;
-color: var(–text-dark);
+color: #1A1A1A;
 outline: none;
-background: var(–white-smoke);
+background-color: #FAFAF8;
 }
 .form-field input:focus {
-border-color: var(–gold);
-background: #fff;
+border-color: #C5A55A;
+background-color: #ffffff;
 }
 .form-field input.err {
-border-color: var(–red);
-background: #fef5f5;
+border-color: #8B2020;
+background-color: #fef5f5;
 }
 .form-err {
 font-size: 12px;
-color: var(–red);
+color: #8B2020;
 margin-top: 3px;
 min-height: 15px;
 }
 .gate-btn {
 width: 100%;
 padding: 13px;
-background: var(–green-deep);
-color: #fff;
+background-color: #1B3A2D;
+color: #ffffff;
 border: none;
 border-radius: 8px;
-font-family: var(–font-body);
+font-family: ‘DM Sans’, sans-serif;
 font-size: 15px;
 font-weight: 600;
 cursor: pointer;
 margin-top: 6px;
-letter-spacing: 0.3px;
 }
-.gate-btn:hover { background: var(–green-mid); }
+.gate-btn:hover { background-color: #2D5E45; }
 .gate-btn:disabled { opacity: 0.55; cursor: not-allowed; }
 .gate-footer {
 text-align: center;
 margin-top: 18px;
 font-size: 11px;
-color: var(–text-light);
+color: #6B6B6B;
 }
 .success-view { display: none; text-align: center; padding: 16px 0; }
 .success-icon {
 width: 54px; height: 54px;
-background: var(–gold-dim);
+background-color: rgba(197,165,90,0.15);
 border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
 margin: 0 auto 14px;
 font-size: 26px;
-color: var(–gold);
+color: #C5A55A;
 }
 .success-view h3 {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: 22px;
-color: var(–green-deep);
+color: #1B3A2D;
 margin-bottom: 8px;
 }
 .success-view p {
 font-size: 14px;
-color: var(–text-light);
+color: #6B6B6B;
 line-height: 1.5;
 }
 .success-btn {
 display: inline-block;
 margin-top: 18px;
 padding: 12px 30px;
-background: var(–green-deep);
-color: #fff;
+background-color: #1B3A2D;
+color: #ffffff;
 border: none;
 border-radius: 8px;
-font-family: var(–font-body);
+font-family: ‘DM Sans’, sans-serif;
 font-size: 14px;
 font-weight: 600;
 cursor: pointer;
 }
-.success-btn:hover { background: var(–green-mid); }
+.success-btn:hover { background-color: #2D5E45; }
 
 /* ========== GUIDE ========== */
-.guide { opacity: 0; }
-.guide.show { opacity: 1; transition: opacity 0.5s ease; }
+.guide { display: none; }
+.guide.show { display: block; }
 .container { max-width: 960px; margin: 0 auto; padding: 0 28px; }
 
 /* HERO */
 .hero {
-background: var(–green-deep);
+background-color: #1B3A2D;
 padding: 72px 0 56px;
 position: relative;
 }
@@ -208,20 +199,20 @@ content: ‘’;
 position: absolute;
 bottom: 0; left: 0; right: 0;
 height: 4px;
-background: var(–gold);
+background-color: #C5A55A;
 }
 .hero-badge {
 font-size: 11px;
 font-weight: 600;
 letter-spacing: 2px;
-color: var(–gold);
+color: #C5A55A;
 text-transform: uppercase;
 margin-bottom: 22px;
 }
 .hero h1 {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: clamp(30px, 5vw, 46px);
-color: #fff;
+color: #ffffff;
 line-height: 1.15;
 margin-bottom: 18px;
 }
@@ -241,9 +232,9 @@ padding-top: 32px;
 }
 .stat-item { text-align: center; }
 .stat-num {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: clamp(22px, 3.5vw, 32px);
-color: var(–gold);
+color: #C5A55A;
 line-height: 1.1;
 margin-bottom: 5px;
 }
@@ -258,27 +249,28 @@ text-transform: uppercase;
 /* SECTIONS */
 .section {
 padding: 56px 0;
-border-bottom: 1px solid var(–border);
+border-bottom: 1px solid #D4D0C8;
+background-color: #F5F3EE;
 }
 .section:last-of-type { border-bottom: none; }
 .section-label {
 font-size: 11px;
 font-weight: 600;
 letter-spacing: 2px;
-color: var(–gold);
+color: #C5A55A;
 text-transform: uppercase;
 margin-bottom: 10px;
 }
 .section h2 {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: clamp(22px, 3.5vw, 30px);
-color: var(–green-deep);
+color: #1B3A2D;
 line-height: 1.2;
 margin-bottom: 14px;
 }
 .section-intro {
 font-size: 15px;
-color: var(–text-med);
+color: #3A3A3A;
 max-width: 680px;
 line-height: 1.7;
 margin-bottom: 28px;
@@ -292,25 +284,25 @@ gap: 14px;
 }
 .hazard-card {
 padding: 18px 22px;
-background: #fff;
+background-color: #ffffff;
 border-radius: 8px;
-border-left: 3px solid var(–gold);
+border-left: 3px solid #C5A55A;
 }
 .hazard-card h4 {
 font-size: 14px;
 font-weight: 700;
-color: var(–green-deep);
+color: #1B3A2D;
 margin-bottom: 5px;
 }
 .hazard-card p {
 font-size: 13px;
-color: var(–text-med);
+color: #3A3A3A;
 line-height: 1.55;
 }
 
 /* Key point banner */
 .key-banner {
-background: var(–green-deep);
+background-color: #1B3A2D;
 border-radius: 8px;
 padding: 22px 28px;
 text-align: center;
@@ -319,20 +311,20 @@ margin-top: 24px;
 .key-banner p {
 font-size: 14px;
 font-weight: 600;
-color: var(–gold);
+color: #C5A55A;
 line-height: 1.55;
 }
 
 /* Callout */
 .callout {
-border-left: 3px solid var(–gold);
+border-left: 3px solid #C5A55A;
 padding: 14px 18px;
 margin: 24px 0;
-background: var(–gold-dim);
+background-color: rgba(197,165,90,0.15);
 border-radius: 0 8px 8px 0;
 font-size: 14px;
 font-weight: 500;
-color: var(–green-deep);
+color: #1B3A2D;
 line-height: 1.6;
 }
 
@@ -344,27 +336,27 @@ gap: 14px;
 margin: 24px 0;
 }
 .liability-card {
-background: #fff;
+background-color: #ffffff;
 border-radius: 8px;
 padding: 22px;
-border: 1px solid var(–border);
-border-left: 3px solid var(–gold);
+border: 1px solid #D4D0C8;
+border-left: 3px solid #C5A55A;
 }
 .liability-card h4 {
 font-size: 14px;
 font-weight: 700;
-color: var(–green-deep);
+color: #1B3A2D;
 margin-bottom: 6px;
 }
 .liability-card p {
 font-size: 13px;
-color: var(–text-med);
+color: #3A3A3A;
 line-height: 1.6;
 }
 
 /* Banner dark */
 .banner-dark {
-background: var(–green-deep);
+background-color: #1B3A2D;
 border-radius: 8px;
 padding: 24px 28px;
 text-align: center;
@@ -374,7 +366,7 @@ margin: 28px 0 0;
 display: block;
 font-size: 14px;
 font-weight: 700;
-color: var(–gold);
+color: #C5A55A;
 margin-bottom: 6px;
 }
 .banner-dark p {
@@ -405,18 +397,18 @@ padding: 5px 12px;
 border-radius: 4px;
 font-size: 11px;
 font-weight: 700;
-color: #fff;
-background: var(–green-deep);
+color: #ffffff;
+background-color: #1B3A2D;
 letter-spacing: 0.5px;
 white-space: nowrap;
 position: relative;
 z-index: 2;
 }
-.tl-pill.danger { background: var(–red); }
+.tl-pill.danger { background-color: #8B2020; }
 .tl-line {
 width: 2px;
 flex: 1;
-background: var(–gold);
+background-color: #C5A55A;
 margin-top: 6px;
 }
 .tl-item:last-child .tl-line { display: none; }
@@ -424,13 +416,13 @@ margin-top: 6px;
 .tl-right h4 {
 font-size: 15px;
 font-weight: 700;
-color: var(–green-deep);
+color: #1B3A2D;
 margin-bottom: 5px;
 }
-.tl-right h4.danger-text { color: var(–red); }
+.tl-right h4.danger-text { color: #8B2020; }
 .tl-right p {
 font-size: 13px;
-color: var(–text-med);
+color: #3A3A3A;
 line-height: 1.6;
 }
 
@@ -447,33 +439,33 @@ width: 32px;
 height: 32px;
 min-width: 32px;
 border-radius: 50%;
-background: var(–gold);
+background-color: #C5A55A;
 display: flex;
 align-items: center;
 justify-content: center;
 font-weight: 700;
 font-size: 14px;
-color: var(–green-deep);
+color: #1B3A2D;
 margin-top: 1px;
 }
 .q-num.final {
-background: var(–red);
-color: #fff;
+background-color: #8B2020;
+color: #ffffff;
 }
 .q-text {
 font-size: 15px;
-color: var(–text-dark);
+color: #1A1A1A;
 line-height: 1.55;
 padding-top: 4px;
 }
 .q-text.final {
-color: var(–red);
+color: #8B2020;
 font-weight: 700;
 }
 
 /* Bottom callout */
 .bottom-callout {
-background: var(–green-deep);
+background-color: #1B3A2D;
 border-radius: 8px;
 padding: 26px 30px;
 text-align: center;
@@ -483,7 +475,7 @@ margin-top: 28px;
 display: block;
 font-size: 15px;
 font-weight: 700;
-color: var(–gold);
+color: #C5A55A;
 line-height: 1.5;
 margin-bottom: 6px;
 }
@@ -497,7 +489,7 @@ margin: 0 auto;
 
 /* WHY PENCO */
 .why-penco {
-background: var(–green-deep);
+background-color: #1B3A2D;
 padding: 56px 0;
 position: relative;
 }
@@ -506,27 +498,27 @@ content: ‘’;
 position: absolute;
 top: 0; left: 0; right: 0;
 height: 4px;
-background: var(–gold);
+background-color: #C5A55A;
 }
 .why-badge {
 font-size: 11px;
 font-weight: 600;
 letter-spacing: 2px;
-color: var(–gold);
+color: #C5A55A;
 text-transform: uppercase;
 margin-bottom: 14px;
 }
 .why-penco h2 {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: clamp(22px, 3.5vw, 30px);
-color: #fff;
+color: #ffffff;
 line-height: 1.2;
 margin-bottom: 6px;
 }
 .why-penco h3 {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: clamp(16px, 2.5vw, 20px);
-color: var(–gold);
+color: #C5A55A;
 margin-bottom: 14px;
 }
 .why-intro {
@@ -547,7 +539,7 @@ gap: 10px;
 align-items: flex-start;
 }
 .svc-check {
-color: var(–gold);
+color: #C5A55A;
 font-size: 18px;
 font-weight: 700;
 line-height: 1.3;
@@ -556,7 +548,7 @@ min-width: 18px;
 .svc-item h4 {
 font-size: 14px;
 font-weight: 600;
-color: #fff;
+color: #ffffff;
 margin-bottom: 3px;
 }
 .svc-item p {
@@ -569,39 +561,39 @@ line-height: 1.5;
 .cta {
 padding: 56px 0;
 text-align: center;
-background: var(–cream);
+background-color: #F5F3EE;
 }
 .cta h2 {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: clamp(20px, 3vw, 26px);
-color: var(–green-deep);
+color: #1B3A2D;
 margin-bottom: 6px;
 }
 .cta-sub {
 font-size: 15px;
-color: var(–text-light);
+color: #6B6B6B;
 margin-bottom: 24px;
 }
 .contact-card {
 display: inline-block;
-background: #fff;
-border: 2px solid var(–gold);
+background-color: #ffffff;
+border: 2px solid #C5A55A;
 border-radius: 12px;
 padding: 22px 44px;
 text-align: center;
 }
 .contact-card h3 {
-font-family: var(–font-display);
+font-family: ‘DM Serif Display’, serif;
 font-size: 22px;
-color: var(–green-deep);
+color: #1B3A2D;
 margin-bottom: 4px;
 }
 .contact-card p {
 font-size: 14px;
-color: var(–text-med);
+color: #3A3A3A;
 }
 .contact-card a {
-color: var(–green-mid);
+color: #2D5E45;
 text-decoration: none;
 font-weight: 500;
 }
@@ -612,18 +604,16 @@ font-weight: 500;
 padding: 22px 0;
 text-align: center;
 font-size: 11px;
-color: var(–text-light);
-border-top: 1px solid var(–border);
+color: #6B6B6B;
+border-top: 1px solid #D4D0C8;
 line-height: 1.6;
-background: var(–white-smoke);
+background-color: #FAFAF8;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
 .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 18px 14px; }
-.hazard-grid,
-.liability-grid,
-.svc-grid { grid-template-columns: 1fr; }
+.hazard-grid, .liability-grid, .svc-grid { grid-template-columns: 1fr; }
 .form-row { flex-direction: column; }
 .gate-card { padding: 30px 22px; }
 .hero { padding: 52px 0 40px; }
@@ -690,11 +680,9 @@ background: var(–white-smoke);
   </div>
 </div>
 
-<!-- GUIDE -->
+<!-- GUIDE (hidden until gate is passed) -->
 
 <div class="guide" id="guide">
-
-  <!-- HERO -->
 
   <section class="hero">
     <div class="container">
@@ -709,8 +697,6 @@ background: var(–white-smoke);
       </div>
     </div>
   </section>
-
-  <!-- SECTION 1: WHAT IS ARC FLASH -->
 
   <section class="section">
     <div class="container">
@@ -741,8 +727,6 @@ background: var(–white-smoke);
     </div>
   </section>
 
-  <!-- SECTION 2: TWO STANDARDS -->
-
   <section class="section">
     <div class="container">
       <div class="section-label">Section 2</div>
@@ -753,8 +737,6 @@ background: var(–white-smoke);
       <div class="callout">If your electrical maintenance program was built before 2023, it was built to a standard that no longer exists. The compliance clock is already running.</div>
     </div>
   </section>
-
-  <!-- SECTION 3: LIABILITY EXPOSURE -->
 
   <section class="section">
     <div class="container">
@@ -793,8 +775,6 @@ background: var(–white-smoke);
       </div>
     </div>
   </section>
-
-  <!-- SECTION 4: AFTER THE INCIDENT TIMELINE -->
 
   <section class="section">
     <div class="container">
@@ -848,8 +828,6 @@ background: var(–white-smoke);
     </div>
   </section>
 
-  <!-- SECTION 5: THE QUESTIONS -->
-
   <section class="section">
     <div class="container">
       <div class="section-label">Section 5</div>
@@ -896,8 +874,6 @@ background: var(–white-smoke);
     </div>
   </section>
 
-  <!-- WHY PENCO -->
-
   <section class="why-penco">
     <div class="container">
       <div class="why-badge">Why Penco</div>
@@ -933,8 +909,6 @@ background: var(–white-smoke);
     </div>
   </section>
 
-  <!-- CTA -->
-
   <section class="cta">
     <div class="container">
       <h2>Ready to Protect Your Facility?</h2>
@@ -945,8 +919,6 @@ background: var(–white-smoke);
       </div>
     </div>
   </section>
-
-  <!-- FOOTER -->
 
   <footer class="page-footer">
     <div class="container">
