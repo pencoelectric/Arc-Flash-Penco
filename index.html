@@ -10,35 +10,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
-:root {
-  --green-deep: #1B3A2D;
-  --green-mid: #2D5E45;
-  --gold: #C5A55A;
-  --gold-dim: rgba(197,165,90,0.15);
-  --cream: #F5F3EE;
-  --white-smoke: #FAFAF8;
-  --text-dark: #1A1A1A;
-  --text-med: #3A3A3A;
-  --text-light: #6B6B6B;
-  --border: #D4D0C8;
-  --red: #8B2020;
-  --font-body: 'DM Sans', sans-serif;
-  --font-display: 'DM Serif Display', serif;
-}
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font-body);
+  font-family: 'DM Sans', sans-serif;
   color: #1A1A1A;
   background-color: #F5F3EE;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ========== GATE ========== */
+/* GATE */
 .gate-overlay {
 position: fixed;
-inset: 0;
+top: 0; left: 0; right: 0; bottom: 0;
 z-index: 1000;
 background-color: #1B3A2D;
 display: flex;
@@ -167,11 +152,12 @@ margin-bottom: 8px;
 font-size: 14px;
 color: #6B6B6B;
 line-height: 1.5;
+margin-bottom: 4px;
 }
-.success-btn {
-display: inline-block;
+.dl-btn {
+display: block;
 margin-top: 18px;
-padding: 12px 30px;
+padding: 13px 30px;
 background-color: #1B3A2D;
 color: #ffffff;
 border: none;
@@ -180,21 +166,38 @@ font-family: ‘DM Sans’, sans-serif;
 font-size: 14px;
 font-weight: 600;
 cursor: pointer;
+text-decoration: none;
+text-align: center;
 }
-.success-btn:hover { background-color: #2D5E45; }
+.dl-btn:hover { background-color: #2D5E45; }
+.read-btn {
+display: block;
+margin-top: 10px;
+padding: 11px 30px;
+background-color: transparent;
+color: #1B3A2D;
+border: 1.5px solid #D4D0C8;
+border-radius: 8px;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+text-align: center;
+}
+.read-btn:hover { border-color: #C5A55A; }
 
-/* ========== GUIDE ========== */
+/* GUIDE */
 .guide { display: none; }
 .guide.show { display: block; }
 .container { max-width: 960px; margin: 0 auto; padding: 0 28px; }
 
-/* HERO */
-.hero {
-background-color: #1B3A2D;
+/* HERO - belt, suspenders, and duct tape */
+section.hero {
+background-color: #1B3A2D !important;
 padding: 72px 0 56px;
 position: relative;
 }
-.hero::after {
+section.hero::after {
 content: ‘’;
 position: absolute;
 bottom: 0; left: 0; right: 0;
@@ -212,7 +215,7 @@ margin-bottom: 22px;
 .hero h1 {
 font-family: ‘DM Serif Display’, serif;
 font-size: clamp(30px, 5vw, 46px);
-color: #ffffff;
+color: #ffffff !important;
 line-height: 1.15;
 margin-bottom: 18px;
 }
@@ -275,8 +278,6 @@ max-width: 680px;
 line-height: 1.7;
 margin-bottom: 28px;
 }
-
-/* Hazard grid */
 .hazard-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -299,8 +300,6 @@ font-size: 13px;
 color: #3A3A3A;
 line-height: 1.55;
 }
-
-/* Key point banner */
 .key-banner {
 background-color: #1B3A2D;
 border-radius: 8px;
@@ -314,8 +313,6 @@ font-weight: 600;
 color: #C5A55A;
 line-height: 1.55;
 }
-
-/* Callout */
 .callout {
 border-left: 3px solid #C5A55A;
 padding: 14px 18px;
@@ -327,8 +324,6 @@ font-weight: 500;
 color: #1B3A2D;
 line-height: 1.6;
 }
-
-/* Liability grid */
 .liability-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -353,8 +348,6 @@ font-size: 13px;
 color: #3A3A3A;
 line-height: 1.6;
 }
-
-/* Banner dark */
 .banner-dark {
 background-color: #1B3A2D;
 border-radius: 8px;
@@ -376,8 +369,6 @@ line-height: 1.6;
 max-width: 600px;
 margin: 0 auto;
 }
-
-/* Timeline */
 .timeline { margin: 24px 0; }
 .tl-item {
 display: flex;
@@ -425,8 +416,6 @@ font-size: 13px;
 color: #3A3A3A;
 line-height: 1.6;
 }
-
-/* Questions */
 .q-list { margin: 24px 0; }
 .q-item {
 display: flex;
@@ -462,8 +451,6 @@ padding-top: 4px;
 color: #8B2020;
 font-weight: 700;
 }
-
-/* Bottom callout */
 .bottom-callout {
 background-color: #1B3A2D;
 border-radius: 8px;
@@ -489,7 +476,7 @@ margin: 0 auto;
 
 /* WHY PENCO */
 .why-penco {
-background-color: #1B3A2D;
+background-color: #1B3A2D !important;
 padding: 56px 0;
 position: relative;
 }
@@ -556,8 +543,6 @@ font-size: 12px;
 color: #8A9A80;
 line-height: 1.5;
 }
-
-/* CTA */
 .cta {
 padding: 56px 0;
 text-align: center;
@@ -588,18 +573,9 @@ font-size: 22px;
 color: #1B3A2D;
 margin-bottom: 4px;
 }
-.contact-card p {
-font-size: 14px;
-color: #3A3A3A;
-}
-.contact-card a {
-color: #2D5E45;
-text-decoration: none;
-font-weight: 500;
-}
+.contact-card p { font-size: 14px; color: #3A3A3A; }
+.contact-card a { color: #2D5E45; text-decoration: none; font-weight: 500; }
 .contact-card a:hover { text-decoration: underline; }
-
-/* FOOTER */
 .page-footer {
 padding: 22px 0;
 text-align: center;
@@ -609,14 +585,12 @@ border-top: 1px solid #D4D0C8;
 line-height: 1.6;
 background-color: #FAFAF8;
 }
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
 .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 18px 14px; }
 .hazard-grid, .liability-grid, .svc-grid { grid-template-columns: 1fr; }
 .form-row { flex-direction: column; }
 .gate-card { padding: 30px 22px; }
-.hero { padding: 52px 0 40px; }
+section.hero { padding: 52px 0 40px; }
 .section { padding: 40px 0; }
 .tl-left { width: 80px; min-width: 80px; }
 .tl-pill { font-size: 10px; padding: 4px 8px; }
@@ -631,8 +605,6 @@ background-color: #FAFAF8;
 
 </head>
 <body>
-
-<!-- GATE -->
 
 <div class="gate-overlay" id="gate">
   <div class="gate-card">
@@ -674,26 +646,27 @@ background-color: #FAFAF8;
     <div class="success-view" id="successView">
       <div class="success-icon">&#10003;</div>
       <h3>You're In.</h3>
-      <p>A PDF copy of this guide will be sent to your email shortly. In the meantime, the full guide is ready for you below.</p>
-      <button class="success-btn" id="continueBtn">Read the Guide</button>
+      <p>Your guide is ready. Download the PDF or read it right here.</p>
+      <a class="dl-btn" href="Penco_Arc_Flash_Guide.pdf" download="Penco_Arc_Flash_Guide.pdf">Download the PDF</a>
+      <button class="read-btn" id="continueBtn">Read the Guide Online</button>
     </div>
   </div>
 </div>
 
-<!-- GUIDE (hidden until gate is passed) -->
-
 <div class="guide" id="guide">
 
-  <section class="hero">
+  <!-- HERO: inline style is the nuclear option - nothing can override this -->
+
+  <section class="hero" style="background-color: #1B3A2D; color: #ffffff;">
     <div class="container">
-      <div class="hero-badge">NFPA 70B / 70E Compliance Resource</div>
-      <h1>Arc Flash Hazards Are Costing Businesses More Than They Know.</h1>
-      <p class="hero-sub">A plain-language guide to arc flash risk, liability exposure, and why most facilities are less protected than they think.</p>
+      <div class="hero-badge" style="color: #C5A55A;">NFPA 70B / 70E Compliance Resource</div>
+      <h1 style="font-family: 'DM Serif Display', serif; color: #ffffff;">Arc Flash Hazards Are Costing Businesses More Than They Know.</h1>
+      <p class="hero-sub" style="color: #B0B8A8;">A plain-language guide to arc flash risk, liability exposure, and why most facilities are less protected than they think.</p>
       <div class="stats-bar">
-        <div class="stat-item"><div class="stat-num">30,000</div><div class="stat-label">Arc Flash Incidents / Year</div></div>
-        <div class="stat-item"><div class="stat-num">7,000</div><div class="stat-label">Burn Injuries Annually</div></div>
-        <div class="stat-item"><div class="stat-num">400+</div><div class="stat-label">Electrical Fatalities / Year</div></div>
-        <div class="stat-item"><div class="stat-num">$15M+</div><div class="stat-label">Avg. Incident Liability</div></div>
+        <div class="stat-item"><div class="stat-num" style="color: #C5A55A;">30,000</div><div class="stat-label">Arc Flash Incidents / Year</div></div>
+        <div class="stat-item"><div class="stat-num" style="color: #C5A55A;">7,000</div><div class="stat-label">Burn Injuries Annually</div></div>
+        <div class="stat-item"><div class="stat-num" style="color: #C5A55A;">400+</div><div class="stat-label">Electrical Fatalities / Year</div></div>
+        <div class="stat-item"><div class="stat-num" style="color: #C5A55A;">$15M+</div><div class="stat-label">Avg. Incident Liability</div></div>
       </div>
     </div>
   </section>
@@ -704,26 +677,12 @@ background-color: #FAFAF8;
       <h2>What Is Arc Flash?</h2>
       <p class="section-intro">An arc flash is a violent release of electrical energy that creates a plasma arc reaching 35,000 degrees Fahrenheit.. four times hotter than the sun's surface. It happens in milliseconds. The U.S. sees 30,000 incidents per year, most during routine tasks like switching gear or testing circuits. That is not a maintenance problem. It is a program problem.</p>
       <div class="hazard-grid">
-        <div class="hazard-card">
-          <h4>Thermal Energy</h4>
-          <p>Plasma arc radiates lethal heat in all directions. Rated PPE is the only barrier between a worker and fatal burns.</p>
-        </div>
-        <div class="hazard-card">
-          <h4>Pressure Wave</h4>
-          <p>The shockwave vaporizes metal and air, throwing workers across rooms and collapsing unprotected lungs.</p>
-        </div>
-        <div class="hazard-card">
-          <h4>Molten Shrapnel</h4>
-          <p>Copper and aluminum conductors vaporize into projectiles traveling hundreds of miles per hour.</p>
-        </div>
-        <div class="hazard-card">
-          <h4>Acoustic Damage</h4>
-          <p>Sound pressure from a severe event causes permanent hearing damage even at a distance.</p>
-        </div>
+        <div class="hazard-card"><h4>Thermal Energy</h4><p>Plasma arc radiates lethal heat in all directions. Rated PPE is the only barrier between a worker and fatal burns.</p></div>
+        <div class="hazard-card"><h4>Pressure Wave</h4><p>The shockwave vaporizes metal and air, throwing workers across rooms and collapsing unprotected lungs.</p></div>
+        <div class="hazard-card"><h4>Molten Shrapnel</h4><p>Copper and aluminum conductors vaporize into projectiles traveling hundreds of miles per hour.</p></div>
+        <div class="hazard-card"><h4>Acoustic Damage</h4><p>Sound pressure from a severe event causes permanent hearing damage even at a distance.</p></div>
       </div>
-      <div class="key-banner">
-        <p>Arc flash triggers equipment destruction, production downtime, regulatory penalties, and serious civil and criminal liability for the facility and its entire ownership chain.</p>
-      </div>
+      <div class="key-banner"><p>Arc flash triggers equipment destruction, production downtime, regulatory penalties, and serious civil and criminal liability for the facility and its entire ownership chain.</p></div>
     </div>
   </section>
 
@@ -744,30 +703,12 @@ background-color: #FAFAF8;
       <h2>Liability Exposure: What Happens Without a Documented Safety Program</h2>
       <p class="section-intro">The arc flash event is the moment everything changes. What existed before it.. or didn't.. determines whether the facility survives what comes next.</p>
       <div class="liability-grid">
-        <div class="liability-card">
-          <h4>OSHA General Duty Clause</h4>
-          <p>Section 5(a)(1) requires workplaces free from recognized hazards. No program, no documentation, no defense. Penalties reach $16,550 per serious violation and $165,514 for willful or repeated citations.</p>
-        </div>
-        <div class="liability-card">
-          <h4>Civil Litigation</h4>
-          <p>Injured workers or families routinely pursue civil action. Without inspection records, corrective action plans, and PPE protocols, the facility has no evidence of due diligence. Verdicts routinely exceed $5M. Some have exceeded $30M.</p>
-        </div>
-        <div class="liability-card">
-          <h4>Criminal Exposure</h4>
-          <p>In fatality cases with documented willful neglect, facility managers and executives have faced criminal prosecution. Awareness of a hazard without corrective action is the core of that case. Your maintenance records are the evidence.</p>
-        </div>
-        <div class="liability-card">
-          <h4>Insurance Consequences</h4>
-          <p>Insurers review maintenance records before paying claims. Facilities without inspection programs aligned to current standards face claim denial, premium increases, or cancellation. The cost of a compliant program is a fraction of a denied claim.</p>
-        </div>
-        <div class="liability-card">
-          <h4>Contractor Liability</h4>
-          <p>If a contractor is injured due to undisclosed arc flash hazards, the facility owner shares liability. NFPA 70E requires host employers to document and communicate hazards to all workers on-site, including third parties.</p>
-        </div>
-        <div class="liability-card">
-          <h4>Regulatory Cascades</h4>
-          <p>An OSHA inspection triggered by one incident rarely stops there. One gap becomes ten citations. Facilities without maintenance documentation and training records face compounding violations across multiple standards simultaneously.</p>
-        </div>
+        <div class="liability-card"><h4>OSHA General Duty Clause</h4><p>Section 5(a)(1) requires workplaces free from recognized hazards. No program, no documentation, no defense. Penalties reach $16,550 per serious violation and $165,514 for willful or repeated citations.</p></div>
+        <div class="liability-card"><h4>Civil Litigation</h4><p>Injured workers or families routinely pursue civil action. Without inspection records, corrective action plans, and PPE protocols, the facility has no evidence of due diligence. Verdicts routinely exceed $5M. Some have exceeded $30M.</p></div>
+        <div class="liability-card"><h4>Criminal Exposure</h4><p>In fatality cases with documented willful neglect, facility managers and executives have faced criminal prosecution. Awareness of a hazard without corrective action is the core of that case. Your maintenance records are the evidence.</p></div>
+        <div class="liability-card"><h4>Insurance Consequences</h4><p>Insurers review maintenance records before paying claims. Facilities without inspection programs aligned to current standards face claim denial, premium increases, or cancellation. The cost of a compliant program is a fraction of a denied claim.</p></div>
+        <div class="liability-card"><h4>Contractor Liability</h4><p>If a contractor is injured due to undisclosed arc flash hazards, the facility owner shares liability. NFPA 70E requires host employers to document and communicate hazards to all workers on-site, including third parties.</p></div>
+        <div class="liability-card"><h4>Regulatory Cascades</h4><p>An OSHA inspection triggered by one incident rarely stops there. One gap becomes ten citations. Facilities without maintenance documentation and training records face compounding violations across multiple standards simultaneously.</p></div>
       </div>
       <div class="banner-dark">
         <strong>THE COMPLIANCE CLOCK IS RUNNING WHETHER OR NOT YOU HAVE STARTED THE PROGRAM.</strong>
@@ -782,48 +723,12 @@ background-color: #FAFAF8;
       <h2>After the Incident: The Next 12 Months</h2>
       <p class="section-intro">An arc flash event does not end when the fire goes out. It triggers a cascading sequence of investigations, audits, and legal exposure that can take years to resolve and cost multiples of the original damage. Here is what the timeline actually looks like.</p>
       <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-pill">HOUR 1</div><div class="tl-line"></div></div>
-          <div class="tl-right">
-            <h4>Incident Response</h4>
-            <p>Emergency services respond. Injured workers transported. Equipment isolated. OSHA must be notified within 8 hours for a hospitalization, within 24 hours for an amputation or loss of an eye. A fatality requires notification within 8 hours.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-pill">WEEK 1</div><div class="tl-line"></div></div>
-          <div class="tl-right">
-            <h4>OSHA Investigation Opens</h4>
-            <p>An inspector arrives at the facility. They request maintenance records, training documentation, arc flash hazard analysis, PPE logs, and LOTO procedures. If those records don't exist, the investigation expands. What started as one incident becomes a full-facility audit.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-pill">MONTH 1-3</div><div class="tl-line"></div></div>
-          <div class="tl-right">
-            <h4>Citations and Legal Exposure</h4>
-            <p>OSHA issues citations. Serious violations carry penalties up to $16,550 each. Willful violations reach $165,514. Simultaneously, the injured worker or their family retains legal counsel. Discovery begins. Every maintenance decision you made or didn't make becomes evidence.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-pill">MONTH 3-6</div><div class="tl-line"></div></div>
-          <div class="tl-right">
-            <h4>Insurance Review</h4>
-            <p>Your insurer reviews the claim. They request the same documentation OSHA did. Without a maintenance program aligned to current NFPA standards, the claim is at risk. Denial, exclusion, or reduced payout are all on the table. Premiums are repriced regardless of outcome.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-pill danger">MONTH 6-12</div><div class="tl-line"></div></div>
-          <div class="tl-right">
-            <h4 class="danger-text">Civil Litigation and Settlement</h4>
-            <p>Depositions. Expert witnesses. Document production. The facility's maintenance history is the central exhibit. Facilities without documented inspection programs, corrective action tracking, and training records have no defense narrative. Verdicts in arc flash cases routinely exceed $5M.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-left"><div class="tl-pill danger">YEAR 1+</div></div>
-          <div class="tl-right">
-            <h4 class="danger-text">Ongoing Consequences</h4>
-            <p>Criminal referral in fatality cases. Increased insurance premiums for 3-5 years. Contractor reluctance to work at the facility. Customer and tenant scrutiny. Regulatory follow-up inspections. The incident becomes the defining event in the facility's operating history.</p>
-          </div>
-        </div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-pill">HOUR 1</div><div class="tl-line"></div></div><div class="tl-right"><h4>Incident Response</h4><p>Emergency services respond. Injured workers transported. Equipment isolated. OSHA must be notified within 8 hours for a hospitalization, within 24 hours for an amputation or loss of an eye. A fatality requires notification within 8 hours.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-pill">WEEK 1</div><div class="tl-line"></div></div><div class="tl-right"><h4>OSHA Investigation Opens</h4><p>An inspector arrives at the facility. They request maintenance records, training documentation, arc flash hazard analysis, PPE logs, and LOTO procedures. If those records don't exist, the investigation expands. What started as one incident becomes a full-facility audit.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-pill">MONTH 1-3</div><div class="tl-line"></div></div><div class="tl-right"><h4>Citations and Legal Exposure</h4><p>OSHA issues citations. Serious violations carry penalties up to $16,550 each. Willful violations reach $165,514. Simultaneously, the injured worker or their family retains legal counsel. Discovery begins. Every maintenance decision you made or didn't make becomes evidence.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-pill">MONTH 3-6</div><div class="tl-line"></div></div><div class="tl-right"><h4>Insurance Review</h4><p>Your insurer reviews the claim. They request the same documentation OSHA did. Without a maintenance program aligned to current NFPA standards, the claim is at risk. Denial, exclusion, or reduced payout are all on the table. Premiums are repriced regardless of outcome.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-pill danger">MONTH 6-12</div><div class="tl-line"></div></div><div class="tl-right"><h4 class="danger-text">Civil Litigation and Settlement</h4><p>Depositions. Expert witnesses. Document production. The facility's maintenance history is the central exhibit. Facilities without documented inspection programs, corrective action tracking, and training records have no defense narrative. Verdicts in arc flash cases routinely exceed $5M.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-pill danger">YEAR 1+</div></div><div class="tl-right"><h4 class="danger-text">Ongoing Consequences</h4><p>Criminal referral in fatality cases. Increased insurance premiums for 3-5 years. Contractor reluctance to work at the facility. Customer and tenant scrutiny. Regulatory follow-up inspections. The incident becomes the defining event in the facility's operating history.</p></div></div>
       </div>
     </div>
   </section>
@@ -834,38 +739,14 @@ background-color: #FAFAF8;
       <h2>The Questions Your Facility Cannot Afford to Leave Unanswered</h2>
       <p class="section-intro">Most facilities believe they are covered. When the incident happens, they discover they are not. The difference between a defensible position and an indefensible one comes down to whether your organization can answer these questions with documentation, not memory.</p>
       <div class="q-list">
-        <div class="q-item">
-          <div class="q-num">1</div>
-          <div class="q-text">When was your last documented electrical inspection, and what standard was it performed to?</div>
-        </div>
-        <div class="q-item">
-          <div class="q-num">2</div>
-          <div class="q-text">Can you produce condition classifications for every piece of critical electrical equipment in your facility?</div>
-        </div>
-        <div class="q-item">
-          <div class="q-num">3</div>
-          <div class="q-text">Do you have a corrective action plan with assigned responsibility and completion dates for every known deficiency?</div>
-        </div>
-        <div class="q-item">
-          <div class="q-num">4</div>
-          <div class="q-text">Are your arc flash hazard labels current, and do they reflect the actual incident energy levels at each piece of equipment?</div>
-        </div>
-        <div class="q-item">
-          <div class="q-num">5</div>
-          <div class="q-text">Can you document that every worker performing or supervising electrical tasks has been trained as a qualified person under NFPA 70E?</div>
-        </div>
-        <div class="q-item">
-          <div class="q-num">6</div>
-          <div class="q-text">If a contractor is injured at your facility tomorrow, can you prove you communicated all known electrical hazards before they started work?</div>
-        </div>
-        <div class="q-item">
-          <div class="q-num">7</div>
-          <div class="q-text">Does your insurer have a copy of your current electrical maintenance program on file?</div>
-        </div>
-        <div class="q-item">
-          <div class="q-num final">8</div>
-          <div class="q-text final">If OSHA walked in today, how many of these answers would you have in writing?</div>
-        </div>
+        <div class="q-item"><div class="q-num">1</div><div class="q-text">When was your last documented electrical inspection, and what standard was it performed to?</div></div>
+        <div class="q-item"><div class="q-num">2</div><div class="q-text">Can you produce condition classifications for every piece of critical electrical equipment in your facility?</div></div>
+        <div class="q-item"><div class="q-num">3</div><div class="q-text">Do you have a corrective action plan with assigned responsibility and completion dates for every known deficiency?</div></div>
+        <div class="q-item"><div class="q-num">4</div><div class="q-text">Are your arc flash hazard labels current, and do they reflect the actual incident energy levels at each piece of equipment?</div></div>
+        <div class="q-item"><div class="q-num">5</div><div class="q-text">Can you document that every worker performing or supervising electrical tasks has been trained as a qualified person under NFPA 70E?</div></div>
+        <div class="q-item"><div class="q-num">6</div><div class="q-text">If a contractor is injured at your facility tomorrow, can you prove you communicated all known electrical hazards before they started work?</div></div>
+        <div class="q-item"><div class="q-num">7</div><div class="q-text">Does your insurer have a copy of your current electrical maintenance program on file?</div></div>
+        <div class="q-item"><div class="q-num final">8</div><div class="q-text final">If OSHA walked in today, how many of these answers would you have in writing?</div></div>
       </div>
       <div class="bottom-callout">
         <strong>If you cannot answer every one of these questions with a documented record,</strong>
@@ -874,37 +755,21 @@ background-color: #FAFAF8;
     </div>
   </section>
 
-  <section class="why-penco">
+  <!-- WHY PENCO: inline style backup -->
+
+  <section class="why-penco" style="background-color: #1B3A2D;">
     <div class="container">
       <div class="why-badge">Why Penco</div>
       <h2>One Qualified Team.</h2>
       <h3>Detect, Document, and Remediate Under One Roof.</h3>
       <p class="why-intro">Most inspection vendors hand you a report and walk away. Penco performs the scan and completes the repair. One vendor, one timeline, one chain of accountability from inspection to closeout. No third-party handoff. No gap between finding and fix.</p>
       <div class="svc-grid">
-        <div class="svc-item">
-          <div class="svc-check">&#10003;</div>
-          <div><h4>IR Thermography</h4><p>NFPA 70B-aligned scans with full delta-T documentation and condition classification.</p></div>
-        </div>
-        <div class="svc-item">
-          <div class="svc-check">&#10003;</div>
-          <div><h4>Ultrasonic Inspection</h4><p>Partial discharge and corona detection inside switchgear and transformers before heat signatures appear.</p></div>
-        </div>
-        <div class="svc-item">
-          <div class="svc-check">&#10003;</div>
-          <div><h4>In-House Electrical Repair</h4><p>Licensed electricians on staff. Remediate findings same visit or scheduled immediately. No third-party handoff.</p></div>
-        </div>
-        <div class="svc-item">
-          <div class="svc-check">&#10003;</div>
-          <div><h4>Compliance Documentation</h4><p>Every scan produces a reportable record aligned to NFPA 70B and 70E. Your documentation is your defense.</p></div>
-        </div>
-        <div class="svc-item">
-          <div class="svc-check">&#10003;</div>
-          <div><h4>Georgia-Based Team</h4><p>Serving Atlanta metro and surrounding areas. Local response time. No out-of-state subcontracting.</p></div>
-        </div>
-        <div class="svc-item">
-          <div class="svc-check">&#10003;</div>
-          <div><h4>One Vendor. One Timeline.</h4><p>From first scan to remediation sign-off, the accountability chain never leaves Penco.</p></div>
-        </div>
+        <div class="svc-item"><div class="svc-check">&#10003;</div><div><h4>IR Thermography</h4><p>NFPA 70B-aligned scans with full delta-T documentation and condition classification.</p></div></div>
+        <div class="svc-item"><div class="svc-check">&#10003;</div><div><h4>Ultrasonic Inspection</h4><p>Partial discharge and corona detection inside switchgear and transformers before heat signatures appear.</p></div></div>
+        <div class="svc-item"><div class="svc-check">&#10003;</div><div><h4>In-House Electrical Repair</h4><p>Licensed electricians on staff. Remediate findings same visit or scheduled immediately. No third-party handoff.</p></div></div>
+        <div class="svc-item"><div class="svc-check">&#10003;</div><div><h4>Compliance Documentation</h4><p>Every scan produces a reportable record aligned to NFPA 70B and 70E. Your documentation is your defense.</p></div></div>
+        <div class="svc-item"><div class="svc-check">&#10003;</div><div><h4>Georgia-Based Team</h4><p>Serving Atlanta metro and surrounding areas. Local response time. No out-of-state subcontracting.</p></div></div>
+        <div class="svc-item"><div class="svc-check">&#10003;</div><div><h4>One Vendor. One Timeline.</h4><p>From first scan to remediation sign-off, the accountability chain never leaves Penco.</p></div></div>
       </div>
     </div>
   </section>
@@ -938,7 +803,6 @@ background-color: #FAFAF8;
   var ln=document.getElementById('lastName');
   var em=document.getElementById('email');
   var btn=document.getElementById('subBtn');
-
   function clearErr(){
     var e=document.querySelectorAll('.form-err');
     for(var i=0;i<e.length;i++) e[i].textContent='';
@@ -949,7 +813,6 @@ background-color: #FAFAF8;
     el.classList.add('err');
     document.getElementById(id).textContent=msg;
   }
-
   form.addEventListener('submit',function(e){
     e.preventDefault();
     clearErr();
@@ -957,7 +820,6 @@ background-color: #FAFAF8;
     var fv=fn.value.trim();
     var lv=ln.value.trim();
     var ev=em.value.trim();
-
     if(!fv||!nameRe.test(fv)){setErr(fn,'fnErr','Enter a valid first name.');ok=false;}
     if(!lv||!nameRe.test(lv)){setErr(ln,'lnErr','Enter a valid last name.');ok=false;}
     if(!ev||ev.indexOf('@')<1){setErr(em,'emErr','Enter a valid email address.');ok=false;}
@@ -966,10 +828,8 @@ background-color: #FAFAF8;
       if(blocked.indexOf(d)!==-1){setErr(em,'emErr','Please use your work email.');ok=false;}
     }
     if(!ok) return;
-
     btn.disabled=true;
     btn.textContent='Sending...';
-
     var xhr=new XMLHttpRequest();
     xhr.open('POST',form.action);
     xhr.setRequestHeader('Accept','application/json');
@@ -991,7 +851,6 @@ background-color: #FAFAF8;
     };
     xhr.send(new FormData(form));
   });
-
   document.getElementById('continueBtn').addEventListener('click',function(){
     document.getElementById('gate').classList.add('hide');
     document.getElementById('guide').classList.add('show');
