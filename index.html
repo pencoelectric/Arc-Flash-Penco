@@ -865,10 +865,7 @@ section.hero { padding: 52px 0 40px; }
     if(guide) guide.classList.add('show');
     try{ window.scrollTo(0,0); } catch(_e){}
   }
-  if(hasPreviewBypass()){
-    showGuide();
-    return;
-  }
+  if(hasPreviewBypass()) showGuide();
 
   var blocked=['tempmail.com','throwaway.email','guerrillamail.com','guerrillamail.de','sharklasers.com','grr.la','guerrillamailblock.com','pokemail.net','spam4.me','binkmail.com','bobmail.info','chammy.info','devnullmail.com','letthemeatspam.com','mailinator.com','maildrop.cc','dispostable.com','yopmail.com','yopmail.fr','cool.fr.nf','jetable.fr.nf','nospam.ze.tc','nomail.xl.cx','mega.zik.dj','speed.1s.fr','courriel.fr.nf','moncourrier.fr.nf','trashmail.com','trashmail.me','trashmail.net','trashymail.com','mailnesia.com','mailcatch.com','tempail.com','tempr.email','temp-mail.org','temp-mail.io','fakeinbox.com','emailondeck.com','getnada.com','tmpmail.net','tmpmail.org','mohmal.com','discard.email','discardmail.com','discardmail.de','mailscrap.com','mailnull.com','spamgourmet.com','spamgourmet.net','mytrashmail.com','thankyou2010.com','greymail.com','mt2015.com','trashinbox.com','despammed.com','kurzepost.de','objectmail.com','proxymail.eu','rcpt.at','trash-mail.at','trashmail.at','trashmail.io','wegwerfmail.de','wegwerfmail.net','wegwerfmail.org','wh4f.org','mailzilla.com','spamfree24.org','fiifke.de','trashinbox.net','imstations.com','mobi.web.id','ezehe.com','trbvm.com','flurred.com','armyspy.com','cuvox.de','dayrep.com','einrot.com','fleckens.hu','gustr.com','jourrapide.com','rhyta.com','superrito.com','teleworm.us','10minutemail.com','20minutemail.com','mailnator.com','anonbox.net','bugmenot.com','bumpymail.com','deadaddress.com','despam.it','dontreg.com','e4ward.com','fakemailgenerator.com','imgof.com','incognitomail.org','kasmail.com','mailexpire.com','mailforspam.com','mailmoat.com','mailsac.com','meltmail.com','mintemail.com','nobulk.com','noclickemail.com','nogmailspam.info','notsomuch.com','ownmail.net','spamavert.com','spambox.us','spamcero.com','spamex.com','spamherelots.com','spaml.com','uggsrock.com','veryrealmail.com','yourspamgoesto.space','harakirimail.com','33mail.com','inboxbear.com','tmail.ws','mailseal.de'];
   var nameRe=/^[A-Za-z\u00C0-\u024F\u1E00-\u1EFF' \-]{2,}$/;
@@ -889,7 +886,7 @@ section.hero { padding: 52px 0 40px; }
     el.classList.add('err');
     document.getElementById(id).textContent=msg;
   }
-  form.addEventListener('submit',function(e){
+  if(form) form.addEventListener('submit',function(e){
     e.preventDefault();
     clearErr();
     var ok=true;
@@ -932,7 +929,8 @@ section.hero { padding: 52px 0 40px; }
     };
     xhr.send(new FormData(form));
   });
-  document.getElementById('continueBtn').addEventListener('click',function(){
+  var continueBtn=document.getElementById('continueBtn');
+  if(continueBtn) continueBtn.addEventListener('click',function(){
     try{ window.localStorage.setItem(BYPASS_KEY,'1'); } catch(_e){}
     showGuide();
   });
